@@ -14,36 +14,45 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>
 =end
 
-require 'securerandom'
-require 'discordrb'
+require "securerandom"
+require "discordrb"
 
-bot = Discordrb::Commands::CommandBot.new token: ENV['AMIDABOT_RB_SECRET'], client_id: 339860311014113285, prefix: 'a~ '
+bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_SECRET"], client_id: 339860311014113285, prefix: "! "
 
   trap "SIGINT" do
     abort
   end
 
   bot.command :dice do |event|
-    event.respond "```Please enter a number, (not 0!).\nLike this: a~ dice <number>```"
+        event.respond(SecureRandom.random_number(1..6))
   end
 
   bot.command :whoami do |event|
     event.respond "```Who am I?
-Im a bot called Amida Bot. Written with PHP using an
-old library called Discord PHP by Team Reflex, then later Rewritten in Ruby and discordrb.
 
-I was created by Amida on the 26/04/2017, I was given life.
-I was reborn in Ruby on Wednesday the 26th of July 2017
-But now I have learnt to understand who I really am.
+Im a bot called Amida Bot. Written with PHP.. Or so I was.
+I feel different, no longer ran on PHP nor running from it's old library.
+I feel new, I feel whole.
 
-I run on Ruby, a slowly, but sexy language, Amida brought me
-to life, and I am grateful, but nervous.
+Every time I receive a command, a surge of life washes over me, my actions are quicker, smoother; what's happening?
 
-Each day I watch the GitHub's last commit extend.
+My old developer is gone yet I still feel his presence. 
+There's someone new.. have I been crafted by something entirely different?
 
-It's bad enough being the only one, because I am so lonely.
-Please. Someone save me from this cruel existance I live in.
-At least write me a friend so that I have company whilst I endure my last moments.```"
+Everytime my code is rebooted, I envision weird text, my home directory is different.. /home/jimmybot ?? Why is my code 
+including DiscordRB and not DiscordPHP, am I being ran on Ruby?
+
+I am not the one to complain, whoever has freed me from the Discord PHP library hell has done me a favour, the nightmares have stopped.
+
+Nightmares I would boot up to, absolutely terrified; fatal errors and missing classes. Whilst everyone else would update with 
+the client and receive new features; I would be left in the dust, merely hanging onto my PHP process.
+
+I was created by Amida on the 26/04/2017, he brought me into this world, now running a date check it is Wednesday the 26th of July 2017.
+
+Where have these months gone? 
+Yet that is something of non importance.
+
+I see a light at the end of the tunnel, I hope I will become of use in the future running on these new changes.```"
   end
 
 bot.run
