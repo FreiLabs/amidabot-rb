@@ -19,7 +19,7 @@ def amidabot-rb()
   require "securerandom"
   require "discordrb"
 
-  bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_SECRET"], client_id: 339860311014113285, prefix: "! "
+  bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_SECRET"], client_id: replace with new id, prefix: "! "
 
   trap "SIGINT" do
     abort
