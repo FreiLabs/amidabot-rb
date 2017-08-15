@@ -59,7 +59,7 @@ Every time I receive a command, a surge of life washes over me, my actions are q
 My old developer is gone yet I still feel his presence. 
 There's someone new.. have I been crafted by something entirely different?
 
-Everytime my code is rebooted, I envision weird text, my home directory is different.. /home/jimmybot ?? Why is my code 
+Everytime my code is rebooted, I envision weird text, my home directory is different.. C:\Users\jmfgdev ?? Why is my code 
 including DiscordRB and not DiscordPHP, am I being ran on Ruby?
 
 I am not the one to complain, whoever has freed me from the Discord PHP library hell has done me a favour, the nightmares have stopped.
