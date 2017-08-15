@@ -29,7 +29,9 @@ def uptime(start_time)
   Time.now - start_time.to_i
 end
 
-uptime(start_time).to_i = formatted_uptime
+# uptime(start_time).to_i
+
+uptime.to_i = formatted_uptime
 
 bot.command :uptime do |event|
   if (formatted_uptime < 60)
