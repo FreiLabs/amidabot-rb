@@ -31,7 +31,7 @@ end
 
 # uptime(start_time).to_i
 
-uptime.to_i = formatted_uptime
+uptime = formatted_uptime
 
 bot.command :uptime do |event|
   if (formatted_uptime < 60)
@@ -43,7 +43,7 @@ bot.command :uptime do |event|
 end
 
 bot.command :dice do |event|
-      event.respond(SecureRandom.random_number(1..6))
+  event.respond(SecureRandom.random_number(1..6))
 end
 
 bot.command :whoami do |event|
