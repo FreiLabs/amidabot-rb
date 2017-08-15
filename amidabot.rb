@@ -32,9 +32,9 @@ end
 bot.command :uptime do |event|
   event.respond "I have been running for #{uptime(start_time).to_i} seconds"
   if uptime(start_time).to_i > 60
-    puts "I've been running for more than a minute"
+    event.respond "I've been running for more than a minute"
   elsif uptime(start_time).to_i > 3600
-    puts "I've been running for more than an hour"
+    event.respond "I've been running for more than an hour"
 end
 
 bot.command :dice do |event|
