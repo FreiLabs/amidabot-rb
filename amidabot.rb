@@ -23,6 +23,16 @@ trap "SIGINT" do
   abort
 end
 
+start_time = Time.now
+
+def uptime(start_time)
+  Time.now - start_time.to_i
+end
+
+bot.command :uptime do |event|
+  event.respond "I have been running for #{uptime(start_time).to_i} seconds"
+end
+
 bot.command :dice do |event|
       event.respond(SecureRandom.random_number(1..6))
 end
