@@ -29,7 +29,7 @@ def uptime(start_time)
   Time.now - start_time.to_i
 end
 
-bot.command (:uptime description: "Returns the uptime in seconds and for now returns logic like more than a minute and more than an hour") do |event|
+bot.command(:uptime, description: "Returns the uptime in seconds and for now returns logic like more than a minute and more than an hour") do |event|
   if (uptime(start_time).to_i < 60)
     event.respond "I have been running for #{uptime(start_time).to_i} seconds"
   elsif (uptime(start_time).to_i > 60)
@@ -39,11 +39,11 @@ bot.command (:uptime description: "Returns the uptime in seconds and for now ret
   end
 end
 
-bot.command (:dice description: "Roll a dice") do |event|
+bot.command(:dice, description: "Roll a dice") do |event|
   event.respond(SecureRandom.random_number(1..6))
 end
 
-bot.command (:whoami description: "Make amidabot think to itself, who am i?") do |event|
+bot.command(:whoami, description: "Make amidabot think to itself, who am i?") do |event|
   event.respond "```Who am I?
 
 Im a bot called Amida Bot. Written with PHP.. Or so I was.
