@@ -40,6 +40,7 @@ bot.command :uptime do |event|
     event.respond "I've been running for more than a minute"
   elsif (formatted_uptime > 3600)
     event.respond "I've been running for more than an hour"
+  end
 end
 
 bot.command :dice do |event|
