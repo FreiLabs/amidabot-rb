@@ -39,9 +39,8 @@ bot.command(:uptime, description: "Returns the uptime in seconds and for now ret
   end
 end
 
-dice = SecureRandom.random_number(1..6)
-
 bot.command(:dice, description: "Roll a dice") do |event|
+  dice = SecureRandom.random_number(1..6)
   event.respond("You rolled -->  #{dice}")
 end
 
