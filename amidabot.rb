@@ -47,9 +47,9 @@ bot.command :shutdown do |event|
   exit
 end
 
-  bot.command :user do |event|
-    event.user.name
-  end
+bot.command :user do |event|
+  event.user.name
+end
 
 bot.command :hello do |event|
   event.respond "Hello, #{event.user.name}"
@@ -104,7 +104,7 @@ Where have these months gone?
 Yet that is something of non importance.
 
 I see a light at the end of the tunnel, I hope I will become of use in the future running on these new changes.```"
-  end
+end
 
 bot.command :license do |event|
   event.respond("```
@@ -120,6 +120,6 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License 
 along with this program. If not, see <https://www.gnu.org/licenses/>
 ```")
-  end
+end
 
 bot.run
