@@ -14,7 +14,6 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>
 =end
 
-require "securerandom"
 require "discordrb"
 
 bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_SECRET"], client_id: 346904604627173387, prefix: "! "
@@ -29,18 +28,41 @@ def uptime(start_time)
   Time.now - start_time.to_i
 end
 
+minutetime = uptime(start_time).to_i / 60.0
+
+bot.command :whoami do |event|
+  event.user.name
+end
+
+bot.command :shutdown do |event|
+  if (event.user.id == 235936608841498625)
+    event.respond("You're authorized to shutdown\nGoodbye!")
+  else
+    event.respond("You're not authorized to shutdown")
+  end
+
+  break unless event.user.id == 235936608841498625
+ 
+  bot.send_message(event.channel.id, 'Bot is shutting down')
+  exit
+end
+
+bot.command :platform do |event|
+  event.respond("My platform is: #{RUBY_PLATFORM}\n\n My Ruby version is: #{RUBY_VERSION}")
+end
+
 bot.command(:uptime, description: "Returns the uptime in seconds and for now returns logic like more than a minute and more than an hour") do |event|
   if (uptime(start_time).to_i < 60)
     event.respond "I have been running for #{uptime(start_time).to_i} seconds"
   elsif (uptime(start_time).to_i > 60)
-    event.respond "I've been running for more than a minute"
+    event.respond "#{minutetime}"
   elsif (uptime(start_time).to_i > 3600)
     event.respond "I've been running for more than an hour"
   end
 end
 
 bot.command(:dice, description: "Roll a dice") do |event|
-  dice = SecureRandom.random_number(1..6)
+  dice = Random.rand(1..6)
   event.respond("You rolled -->  #{dice}")
 end
 
@@ -70,6 +92,21 @@ Where have these months gone?
 Yet that is something of non importance.
 
 I see a light at the end of the tunnel, I hope I will become of use in the future running on these new changes.```"
+  end
+
+bot.command :license do |event|
+  event.respond("
+Copyright © 2017 jmfgdev@outlook.com
+This program is free software: you can redistribute it and/or modify 
+it under the terms of the GNU Affero General Public License as published by 
+the Free Software Foundation, either version 3 of the License, or 
+(at your option) any later version.
+This program is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+GNU Affero General Public License for more details.
+You should have received a copy of the GNU Affero General Public License 
+along with this program. If not, see <https://www.gnu.org/licenses/>")
   end
 
 bot.run
