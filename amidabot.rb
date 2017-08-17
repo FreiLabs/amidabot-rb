@@ -47,6 +47,14 @@ bot.command :shutdown do |event|
   exit
 end
 
+  bot.command :user do |event|
+    event.user.name
+  end
+
+bot.command :hello do |event|
+  event.respond "Hello, #{event.user.name}"
+end
+
 bot.command :platform do |event|
   event.respond("My platform is: #{RUBY_PLATFORM}\nMy Ruby version is: #{RUBY_VERSION}")
 end
