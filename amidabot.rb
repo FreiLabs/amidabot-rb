@@ -28,7 +28,7 @@ def uptime(start_time)
   Time.now - start_time.to_i
 end
 
-minutetime = uptime(start_time).to_i / 60.0
+minutetime = uptime(start_time).to_i / 60
 
 bot.command :whoami do |event|
   event.user.name
@@ -95,7 +95,7 @@ I see a light at the end of the tunnel, I hope I will become of use in the futur
   end
 
 bot.command :license do |event|
-  event.respond("
+  event.respond("```
 Copyright © 2017 jmfgdev@outlook.com
 This program is free software: you can redistribute it and/or modify 
 it under the terms of the GNU Affero General Public License as published by 
@@ -106,7 +106,8 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
 GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License 
-along with this program. If not, see <https://www.gnu.org/licenses/>")
+along with this program. If not, see <https://www.gnu.org/licenses/>
+```")
   end
 
 bot.run
