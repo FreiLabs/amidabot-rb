@@ -48,7 +48,7 @@ bot.command :shutdown do |event|
 end
 
 bot.command :platform do |event|
-  event.respond("My platform is: #{RUBY_PLATFORM}\n\n My Ruby version is: #{RUBY_VERSION}")
+  event.respond("My platform is: #{RUBY_PLATFORM}\nMy Ruby version is: #{RUBY_VERSION}")
 end
 
 bot.command(:uptime, description: "Returns the uptime in seconds and for now returns logic like more than a minute and more than an hour") do |event|
