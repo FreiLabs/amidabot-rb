@@ -51,6 +51,10 @@ bot.command :platform do |event|
   event.respond("My platform is: #{RUBY_PLATFORM}\nMy Ruby version is: #{RUBY_VERSION}")
 end
 
+bot.command :ping do |event|
+  event.respond "Pong!\n\nThat took `#{((Time.now - event.timestamp) * 1000).to_i}ms`"
+end
+
 bot.command(:uptime, description: "Returns the uptime in seconds and for now returns logic like more than a minute and more than an hour") do |event|
   if (uptime(start_time).to_i < 60)
     event.respond "I have been running for #{uptime(start_time).to_i} seconds"
