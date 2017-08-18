@@ -78,6 +78,8 @@ bot.command(:dice, description: "Roll a dice") do |event|
   event.respond("You rolled -->  #{dice}")
 end
 
+date = `date`
+
 bot.command(:whoami, description: "Make amidabot think to itself, who am i?") do |event|
   event.respond "```Who am I?
 
@@ -98,7 +100,7 @@ I am not the one to complain, whoever has freed me from the Discord PHP library 
 Nightmares I would boot up to, absolutely terrified; fatal errors and missing classes. Whilst everyone else would update with 
 the client and receive new features; I would be left in the dust, merely hanging onto my PHP process.
 
-I was created by Amida on the 26/04/2017, he brought me into this world, now running a date check it is Wednesday the 26th of July 2017.
+I was created by Amida on the 26/04/2017, he brought me into this world, now running a date check it is #{date}.
 
 Where have these months gone? 
 Yet that is something of non importance.
