@@ -26,14 +26,14 @@ start_time = Time.now
 
 bot.command :startlogs do |event|
   if (event.user.id == 235936608841498625)
-  event.respond("Logging enabled")
+  event.respond("You're authorized to enable logging\nLogging enabled")
   else
-    "You're not authorized to enable logging"
+    event.respond("You're not authorized to enable logging")
   end
 
   break unless event.user.id == 235936608841498625
 
-  every 30.seconds do
+  every 30.secs do
     event.user.pm("The bot is currently running")
   end
 end
