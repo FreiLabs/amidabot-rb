@@ -88,7 +88,7 @@ bot.command(:uptime, description: "Returns the uptime in seconds") do |event|
     event.respond("I have been running for #{uptime(start_time).to_i} seconds.")
   elsif minutes = 1
       event.respond("I have been running for more than a minute, specifically #{minutes} minute.") 
-  elsif (uptime(start_time).to_i > 60)
+  elsif (minutes > 1)
     event.respond("I have been running for more than a minute, specifically #{minutes} minutes.")
   elsif (uptime(start_time).to_i > 3600)
     event.respond("I've been running for more than an hour, specifically #{uptime(start_time).to_i} seconds.")
