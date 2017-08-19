@@ -26,7 +26,7 @@ date = `date`
 
 start_time = Time.now
 
-uptime_uptime = (uptime(start_time).to_i
+uptime_uptime = uptime(start_time).to_i
 
 bot.command :startlogs do |event|
   if (event.user.id == 235936608841498625)
@@ -68,7 +68,7 @@ bot.command :user do |event|
 end
 
 bot.command :hello do |event|
-  event.respond "Hello, #{event.user.name}"
+  event.respond("Hello, #{event.user.name}")
 end
 
 bot.command :platform do |event|
@@ -76,16 +76,16 @@ bot.command :platform do |event|
 end
 
 bot.command :ping do |event|
-  event.respond "Pong!\n\nThat took `#{((Time.now - event.timestamp) * 1000).to_i}ms`"
+  event.respond("Pong!\n\nThat took `#{((Time.now - event.timestamp) * 1000).to_i}ms`")
 end
 
 bot.command(:uptime, description: "Returns the uptime in seconds") do |event|
   if (uptime(start_time).to_i < 60)
-    event.respond "I have been running for #{uptime_uptime} seconds."
+    event.respond("I have been running for #{uptime_uptime} seconds.")
   elsif (uptime > 60)
-    event.respond "I have been running for more than a minute, specifically #{uptime_uptime} seconds."
+    event.respond("I have been running for more than a minute, specifically #{uptime_uptime} seconds.")
   elsif (uptime(start_time).to_i > 3600)
-    event.respond "I've been running for more than an hour, specifically #{uptime_uptime} seconds."
+    event.respond("I've been running for more than an hour, specifically #{uptime_uptime} seconds.")
   end
 end
 
@@ -95,7 +95,7 @@ bot.command(:dice, description: "Roll a dice") do |event|
 end
 
 bot.command(:whoami, description: "Make amidabot think to itself, who am i?") do |event|
-  event.respond "```Who am I?
+  event.respond("```Who am I?
 
 Im a bot called Amida Bot. Written with PHP.. Or so I was.
 I feel different, no longer ran on PHP nor running from it's old library.
@@ -119,7 +119,7 @@ I was created by Amida on the 26/04/2017, he brought me into this world, now run
 Where have these months gone? 
 Yet that is something of non importance.
 
-I see a light at the end of the tunnel, I hope I will become of use in the future running on these new changes.```"
+I see a light at the end of the tunnel, I hope I will become of use in the future running on these new changes.```")
 end
 
 bot.command :license do |event|
