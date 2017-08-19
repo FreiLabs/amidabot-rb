@@ -22,7 +22,7 @@ trap "SIGINT" do
   abort
 end
 
-minutes = uptime(start_time).to_i / 60
+minutes = "uptime(start_time).to_i / 60"
 
 date = `date`
 
