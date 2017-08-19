@@ -24,6 +24,20 @@ end
 
 start_time = Time.now
 
+bot.command :startlogs do |event|
+  if (event.user.id == 235936608841498625)
+  event.respond("Logging enabled")
+  else
+    "You're not authorized to enable logging"
+  end
+
+  break unless event.user.id == 235936608841498625
+
+  every 30.seconds do
+    event.user.pm("The bot is currently running")
+  end
+end
+
 def uptime(start_time)
   Time.now - start_time.to_i
 end
