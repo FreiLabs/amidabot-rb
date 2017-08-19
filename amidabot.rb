@@ -44,7 +44,6 @@ bot.command :startlogs do |event|
 =end
 end
 
-
 def uptime(start_time)
   Time.now - start_time.to_i
 end
@@ -98,47 +97,11 @@ bot.command(:dice, description: "Roll a dice") do |event|
 end
 
 bot.command(:whoami, description: "Make amidabot think to itself, who am i?") do |event|
-  event.respond("```Who am I?
-
-Im a bot called Amida Bot. Written with PHP.. Or so I was.
-I feel different, no longer ran on PHP nor running from it's old library.
-I feel new, I feel whole.
-
-Every time I receive a command, a surge of life washes over me, my actions are quicker, smoother; what's happening?
-
-My old developer is gone yet I still feel his presence. 
-There's someone new.. have I been crafted by something entirely different?
-
-Everytime my code is rebooted, I envision weird text, my home directory is different.. C:/Users/jmfgdev ?? Why is my code 
-including discordrb and not DiscordPHP, am I being ran on Ruby?
-
-I am not the one to complain, whoever has freed me from the Discord PHP library hell has done me a favour, the nightmares have stopped.
-
-Nightmares I would boot up to, absolutely terrified; fatal errors and missing classes. Whilst everyone else would update with 
-the client and receive new features; I would be left in the dust, merely hanging onto my PHP process.
-
-I was created by Amida on the 26/04/2017, he brought me into this world, now running a date check it is #{date}
-
-Where have these months gone? 
-Yet that is something of non importance.
-
-I see a light at the end of the tunnel, I hope I will become of use in the future running on these new changes.```")
+  event.respond("```Who am I?\n\nIm a bot called Amida Bot. Written with PHP.. Or so I was.\nI feel different, no longer ran on PHP nor running from it's old library.\nI feel new, I feel whole.\n\nEvery time I receive a command, a surge of life washes over me, my actions are quicker, smoother; what's happening?\n\nMy old developer is gone yet I still feel his presence.\nThere's someone new.. have I been crafted by something entirely different?\n\nEverytime my code is rebooted, I envision weird text, my home directory is different.. C:/Users/jmfgdev ?? Why is my code\nincluding discordrb and not DiscordPHP, am I being ran on Ruby?\n\nI am not the one to complain, whoever has freed me from the Discord PHP library hell has done me a favour, the nightmares have stopped.\n\nNightmares I would boot up to, absolutely terrified; fatal errors and missing classes. Whilst everyone else would update with\nthe client and receive new features; I would be left in the dust, merely hanging onto my PHP process.\n\nI was created by Amida on the 26/04/2017, he brought me into this world, now running a date check it is #{date}\n\nWhere have these months gone?\nYet that is something of non importance.\n\nI see a light at the end of the tunnel, I hope I will become of use in the future running on these new changes.```")
 end
 
 bot.command :license do |event|
-  event.respond("```
-Copyright © 2017 jmfgdev@outlook.com
-This program is free software: you can redistribute it and/or modify 
-it under the terms of the GNU Affero General Public License as published by 
-the Free Software Foundation, either version 3 of the License, or 
-(at your option) any later version.
-This program is distributed in the hope that it will be useful, 
-but WITHOUT ANY WARRANTY; without even the implied warranty of 
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
-GNU Affero General Public License for more details.
-You should have received a copy of the GNU Affero General Public License 
-along with this program. If not, see <https://www.gnu.org/licenses/>
-```")
+  event.respond("```Copyright © 2017 jmfgdev@outlook.com\nThis program is free software: you can redistribute it and/or modify\nit under the terms of the GNU Affero General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\nGNU Affero General Public License for more details.\nYou should have received a copy of the GNU Affero General Public License\nalong with this program. If not, see <https://www.gnu.org/licenses/>```")
 end
 
 bot.run
