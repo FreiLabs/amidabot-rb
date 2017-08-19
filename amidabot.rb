@@ -26,8 +26,6 @@ date = `date`
 
 start_time = Time.now
 
-uptime_uptime = uptime(start_time).to_i
-
 bot.command :startlogs do |event|
   if (event.user.id == 235936608841498625)
   event.respond("You're authorized to enable logging\nLogging enabled")
@@ -81,11 +79,11 @@ end
 
 bot.command(:uptime, description: "Returns the uptime in seconds") do |event|
   if (uptime(start_time).to_i < 60)
-    event.respond("I have been running for #{uptime_uptime} seconds.")
+    event.respond("I have been running for #{uptime(start_time).to_i} seconds.")
   elsif (uptime > 60)
-    event.respond("I have been running for more than a minute, specifically #{uptime_uptime} seconds.")
+    event.respond("I have been running for more than a minute, specifically #{uptime(start_time).to_i} seconds.")
   elsif (uptime(start_time).to_i > 3600)
-    event.respond("I've been running for more than an hour, specifically #{uptime_uptime} seconds.")
+    event.respond("I've been running for more than an hour, specifically #{uptime(start_time).to_i} seconds.")
   end
 end
 
