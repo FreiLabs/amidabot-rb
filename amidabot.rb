@@ -22,7 +22,11 @@ trap "SIGINT" do
   abort
 end
 
+date = `date`
+
 start_time = Time.now
+
+uptime_uptime = (uptime(start_time).to_i
 
 bot.command :startlogs do |event|
   if (event.user.id == 235936608841498625)
@@ -41,8 +45,6 @@ end
 def uptime(start_time)
   Time.now - start_time.to_i
 end
-
-minutetime = uptime(start_time).to_i / 60
 
 bot.command :whoami do |event|
   event.user.name
@@ -77,13 +79,13 @@ bot.command :ping do |event|
   event.respond "Pong!\n\nThat took `#{((Time.now - event.timestamp) * 1000).to_i}ms`"
 end
 
-bot.command(:uptime, description: "Returns the uptime in seconds and for now returns logic like more than a minute and more than an hour") do |event|
+bot.command(:uptime, description: "Returns the uptime in seconds") do |event|
   if (uptime(start_time).to_i < 60)
-    event.respond "I have been running for #{uptime(start_time).to_i} seconds"
-  elsif (uptime(start_time).to_i > 60)
-    event.respond "#{minutetime}"
+    event.respond "I have been running for #{uptime_uptime} seconds."
+  elsif (uptime > 60)
+    event.respond "I have been running for more than a minute, specifically #{uptime_uptime} seconds."
   elsif (uptime(start_time).to_i > 3600)
-    event.respond "I've been running for more than an hour"
+    event.respond "I've been running for more than an hour, specifically #{uptime_uptime} seconds."
   end
 end
 
@@ -91,8 +93,6 @@ bot.command(:dice, description: "Roll a dice") do |event|
   dice = Random.rand(1..6)
   event.respond("You rolled -->  #{dice}")
 end
-
-date = `date`
 
 bot.command(:whoami, description: "Make amidabot think to itself, who am i?") do |event|
   event.respond "```Who am I?
