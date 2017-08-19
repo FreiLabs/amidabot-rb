@@ -82,18 +82,7 @@ bot.command :ping do |event|
 end
 
 bot.command(:uptime, description: "Returns the uptime in seconds") do |event|
-  if (uptime(start_time).to_i < 60)
     event.respond("I have been running for #{uptime(start_time).to_i} seconds.")
-  elsif (uptime(start_time).to_i > 60)
-      uptime(start_time).to_i = uptime(start_time).to_i / 60
-      event.respond("I have been running for more than a minute, specifically #{uptime(start_time).to_i} seconds.") 
-  elsif (uptime(start_time).to_i > 1)
-    uptime(start_time).to_i = uptime(start_time).to_i / 60
-    event.respond("I have been running for more than a minute, specifically #{uptime(start_time).to_i} seconds.")
-  elsif (uptime(start_time).to_i > 3600)
-    uptime(start_time).to_i = uptime(start_time).to_i / 60
-    event.respond("I've been running for more than an hour, specifically #{uptime(start_time).to_i} seconds.")
-  end
 end
 
 bot.command(:dice, description: "Roll a dice") do |event|
