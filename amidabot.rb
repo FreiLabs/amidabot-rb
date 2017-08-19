@@ -33,7 +33,7 @@ bot.command :startlogs do |event|
 
   break unless event.user.id == 235936608841498625
 
-  every 30.secs do
+  every 1.minute do
     event.user.pm("The bot is currently running")
   end
 end
