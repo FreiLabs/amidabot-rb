@@ -15,6 +15,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>
 =end
 
 require "discordrb"
+require "securerandom"
 
 bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_SECRET"], client_id: 346904604627173387, prefix: "! "
 
@@ -39,7 +40,7 @@ bot.command :startlogs do |event|
 
 =begin
   every 1.minute do
-    event.user.pm("The bot is currently running")
+    user.pm("The bot is currently running")
   end
 =end
 end
