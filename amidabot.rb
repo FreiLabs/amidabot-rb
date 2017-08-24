@@ -19,6 +19,8 @@ require "securerandom"
 
 bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_SECRET"], client_id: 346904604627173387, prefix: "! "
 
+Discordrb::LOGGER.streams << File.open("logs/#{::Time.now.strftime('%F %T')}", 'w')
+
 trap "SIGINT" do
   abort
 end
