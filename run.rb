@@ -16,5 +16,9 @@ along with this program. If not, see <https://www.gnu.org/licenses/>
 
 puts "Updating from git"
 system "git pull"
+puts "Updating system gems"
+system "gem update --system"
+puts "Updating non-system gems"
+system "gem update"
 puts "Running amidabot in the background"
 system "ruby amidabot.rb &"
