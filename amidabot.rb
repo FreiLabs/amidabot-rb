@@ -1,23 +1,23 @@
 #!/usr/bin/env ruby
 
-=begin 
+=begin
 Copyright © 2017 jimmybot@teknik.io
-This program is free software: you can redistribute it and/or modify 
-it under the terms of the GNU Affero General Public License as published by 
-the Free Software Foundation, either version 3 of the License, or 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
-This program is distributed in the hope that it will be useful, 
-but WITHOUT ANY WARRANTY; without even the implied warranty of 
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU Affero General Public License for more details.
-You should have received a copy of the GNU Affero General Public License 
+You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>
 =end
 
 require "discordrb"
 require "securerandom"
 
-bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_SECRET"], client_id: 346904604627173387, prefix: "! "
+bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_TOKEN"], client_id: 346904604627173387, prefix: "! "
 
 Discordrb::LOGGER.streams << File.open("logs/#{::Time.now.strftime('%F %T')}", 'w')
 
@@ -63,7 +63,7 @@ bot.command :shutdown do |event|
   end
 
   break unless event.user.id == 235936608841498625
- 
+
   bot.send_message(event.channel.id, 'Bot is shutting down')
   exit
 end
