@@ -29,6 +29,7 @@ date = `date`
 
 start_time = Time.now
 
+=begin
 bot.command :startlogs do |event|
   if (event.user.id == 235936608841498625)
   event.respond("You're authorized to enable logging\nLogging enabled")
@@ -38,14 +39,12 @@ bot.command :startlogs do |event|
 
   break unless event.user.id == 235936608841498625
 
-  event.respond("The next bit of code is disabled due to its interrupting the proper function of Amidabot")
-
-=begin
   every 1.minute do
     user.pm("The bot is currently running")
   end
-=end
 end
+=end
+
 
 def uptime(start_time)
   Time.now - start_time.to_i
