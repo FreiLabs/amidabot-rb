@@ -14,6 +14,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>
 =end
 
+puts "Making sure discordrb is installed"
 system "gem install discordrb"
 puts "Updating from git"
 system "git pull"
@@ -21,5 +22,5 @@ puts "Updating system gems"
 system "sudo gem update --system"
 puts "Updating non-system gems"
 system "sudo gem update"
-puts "Running amidabot in the background"
-system "ruby amidabot.rb &"
+puts "Running amidabot in a screen"
+system "screen ruby amidabot.rb"
