@@ -14,6 +14,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>
 =end
 
+system "git pull"
 puts "Making sure discordrb is installed"
 system "gem install discordrb"
 puts "Updating from git"
