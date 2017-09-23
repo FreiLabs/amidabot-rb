@@ -29,9 +29,9 @@ date = `date`
 
 start_time = Time.now
 
-def uptime(start_time)
-  Time.now - start_time
-end
+#def uptime(start_time)
+#  Time.now - start_time
+#end
 
 =begin
 bot.command :startlogs do |event|
@@ -83,16 +83,20 @@ bot.command :ping do |event|
 end
 
 bot.command(:uptime, description: "Returns the uptime in seconds") do |event|
-    event.respond("I have been running for #{uptime_fmt} seconds.")
+	time_since_start = Time.now - start_time
+	minutes_since_start = (Time.now - start_time) / 60
+	hours_since_start = ((Time.now - start_time) / 60) / 60
+	event.respond("I have been running for #{time_since_start.to_i} seconds, #{minutes_since_start.to_i} minutes, and #{hours_since_start.to_i} hours")
 end
 
 #uptime(start_time).to_i = uptimesecs
 
-
+=begin
 bot.command(:uptime2, description: "Test command") do |event|
  	#uptime_fmt / 60 = uptime_mins	
 	event.respond "I have been running for #{uptime_fmt} seconds" 	    
 end
+=end
 
 bot.command(:dice, description: "Roll a dice") do |event|
   dice = Random.rand(1..6)
