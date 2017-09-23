@@ -33,8 +33,6 @@ def uptime(start_time)
   Time.now - start_time
 end
 
-uptime_fmt = uptime(start_time).to_i
-
 =begin
 bot.command :startlogs do |event|
   if (event.user.id == 235936608841498625)
@@ -93,7 +91,7 @@ end
 
 bot.command(:uptime2, description: "Test command") do |event|
  	#uptime_fmt / 60 = uptime_mins	
-	event.respond "I have been running for #{uptime(start_time).to_i} seconds" 	    
+	event.respond "I have been running for #{uptime_fmt} seconds" 	    
 end
 
 bot.command(:dice, description: "Roll a dice") do |event|
