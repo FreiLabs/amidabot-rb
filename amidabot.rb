@@ -49,6 +49,11 @@ bot.command :startlogs do |event|
 end
 =end
 
+bot.command :update do |event|
+	event.respond "Updating the system, thank you for updating the bot's system!"
+	sysytem "sudo apt update; sudo apt upgrade; sudo apt dist-upgrade; sudo apt full-upgrade; sudo apt autoclean; sudo apt autoremove; sudo apt autoclean"
+end
+
 bot.command :whoami do |event|
   event.user.name
 end
@@ -86,6 +91,7 @@ bot.command(:uptime, description: "Returns the uptime in seconds") do |event|
 	time_since_start = Time.now - start_time
 	minutes_since_start = (Time.now - start_time) / 60
 	hours_since_start = ((Time.now - start_time) / 60) / 60
+	days_since_start = (((Time.now - start_time) / 60) / 60) / 24
 	if (minutes_since_start.to_i != 0 && hours_since_start.to_i == 0)
 		event.respond "I have been running for #{minutes_since_start.to_i} minute(s)"
 	elsif (hours_since_start.to_i != 0)
