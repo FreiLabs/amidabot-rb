@@ -15,7 +15,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>
 =end
 
 require "discordrb"
-require "securerandom"
+#require "securerandom"
 
 bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_TOKEN"], client_id: 346904604627173387, prefix: "! "
 
@@ -117,7 +117,7 @@ end
 
 bot.command(:dice, description: "Roll a dice") do |event|
   dice = Random.rand(1..6)
-  event.respond("You rolled -->  #{dice}")
+  event.respond("You rolled -->  #{dice} :game_die:")
 end
 
 bot.command(:whoami, description: "Make amidabot think to itself, who am i?") do |event|
