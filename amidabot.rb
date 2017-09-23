@@ -86,7 +86,13 @@ bot.command(:uptime, description: "Returns the uptime in seconds") do |event|
 	time_since_start = Time.now - start_time
 	minutes_since_start = (Time.now - start_time) / 60
 	hours_since_start = ((Time.now - start_time) / 60) / 60
-	event.respond("I have been running for #{time_since_start.to_i} seconds, #{minutes_since_start.to_i} minutes, and #{hours_since_start.to_i} hours")
+	if (minutes_since_start.to_i != 0 && hours_since_start.to_i == 0)
+		event.respond "I have been running for #{time_since_start.to_i} seconds, and #{minutes_since_start.to_i} minutes"
+	elsif (hours_since_start.to_i != 0)
+		event.respond "I have been running for #{time_since_start.to_i} seconds, #{minutes_since_start.to_i} minutes, and #{hours_since_start.to_i} hours"
+	elsif (minutes_since_start.to_i == 0 && hours_since_start.to_i == 0)
+		event.respond "I have been running for #{time_since_start.to_i} seconds"
+	end
 end
 
 #uptime(start_time).to_i = uptimesecs
