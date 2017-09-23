@@ -49,10 +49,13 @@ bot.command :startlogs do |event|
 end
 =end
 
+#Causes weird "true" response
+=begin
 bot.command :update do |event|
 	event.respond "Updating the system, thank you for updating the bot's system!"
-	system "sudo apt update; sudo apt upgrade; sudo apt dist-upgrade; sudo apt full-upgrade; sudo apt autoclean; sudo apt autoremove; sudo apt autoclean"
+	system "sudo apt update; sudo apt upgrade -y;"
 end
+=end
 
 bot.command :whoami do |event|
   event.user.name
