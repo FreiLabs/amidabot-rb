@@ -57,6 +57,21 @@ bot.command :update do |event|
 	system "sudo apt update; sudo apt upgrade -y;"
 end
 =end
+bot.command :avatar do |event, arg1|
+	event.respond(event.user.avatar)
+end
+
+bot.command :nsfw do |event|
+	event.respond "The developer of this bot is old enough to but doesn't feel like loading his bot with tiddies"
+end
+
+bot.command :smashpass do |event|
+	if (Random.rand(1..2) == 1)
+		event.respond "Smash"
+	elsif (Random.rand(1..2) == 2)
+		event.respond "Pass"
+	end
+end
 
 bot.command :multiply do |event, str1, str2|
 	mul_result = str1.to_i * str2.to_i
