@@ -29,6 +29,7 @@ date = `date`
 
 start_time = Time.now
 
+
 #def uptime(start_time)
 #  Time.now - start_time
 #end
@@ -72,6 +73,11 @@ bot.command :shutdown do |event|
 
   bot.send_message(event.channel.id, 'Bot is shutting down')
   exit
+end
+
+bot.command :rateme do |event|
+	rating_num = Random.rand(1..100)
+	event.respond "I'd rate you a #{rating_num} out of 100"
 end
 
 bot.command :user do |event|
