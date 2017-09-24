@@ -58,6 +58,22 @@ bot.command :update do |event|
 end
 =end
 
+bot.command :info do |event|
+	event.respond "```Here's some info about the bot.\nThe bot runs on Ruby, from RVM(master), and the current version and platform/version information is available via the ! platform command.\n```"
+end
+
+bot.command :marco do |event|
+	event.respond "POO!!!!"
+end
+
+bot.command :night do |event|
+	event.respond "I refuse to recreate this command because I know the reason Er0x made it was out of pure loneliness trying to talk to a non intelligent bot"
+end
+
+bot.command :on do |event|
+	event.respond "The bot is most certainly online"
+end
+
 bot.command :coinflip do |event|
 	flip =Random.rand(1..2)
 	if (flip == 1)
