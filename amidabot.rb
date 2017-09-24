@@ -58,6 +58,26 @@ bot.command :update do |event|
 end
 =end
 
+bot.command :multiply do |event, str1, str2|
+	mul_result = str1.to_i * str2.to_i
+	event.respond(mul_result)
+end
+
+bot.command :div do |event, str1, str2|
+	div_result = str1.to_i / str2.to_i
+	event.respond(div_result)
+end
+
+bot.command :sub do |event, str1, str2|
+	sub_result = str1.to_i - str2.to_i
+	event.respond(sub_result)
+end
+
+bot.command :add do |event, str1, str2|
+	result = str1.to_i + str2.to_i
+	event.respond(result) 
+end
+
 bot.command :info do |event|
 	event.respond "```Here's some info about the bot.\nThe bot runs on Ruby, from RVM(master), and the current version and platform/version information is available via the ! platform command.\n```"
 end
