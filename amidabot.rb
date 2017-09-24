@@ -58,6 +58,16 @@ bot.command :update do |event|
 end
 =end
 
+bot.command :coinflip do |event|
+	flip =Random.rand(1..2)
+	if (flip == 1)
+		result = "Heads"
+	elsif (flip == 2)
+		result = "Tails"
+	end
+	event.respond "You flipped #{result}"
+end
+
 bot.command :whoami do |event|
   event.user.name
 end
