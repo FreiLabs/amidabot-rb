@@ -63,7 +63,7 @@ bot.command :info do |event|
 end
 
 bot.command :marco do |event|
-	event.respond "POO!!!!"
+	event.respond "POLO!!!!"
 end
 
 bot.command :night do |event|
