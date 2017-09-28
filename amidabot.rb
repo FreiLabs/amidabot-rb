@@ -15,7 +15,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>
 =end
 
 require "discordrb"
-#require "securerandom"
 
 bot = Discordrb::Commands::CommandBot.new token: ENV["AMIDABOT_RB_TOKEN"], client_id: 346904604627173387, prefix: "! "
 
@@ -57,9 +56,16 @@ bot.command :update do |event|
 	system "sudo apt update; sudo apt upgrade -y;"
 end
 =end
+
+bot.command :eatmyass do |event, arg1|
+	event.respond "Moon, stop it. This isn't a command."
+end
+
+=begin
 bot.command :avatar do |event, arg1|
 	event.respond(event.user.avatar)
 end
+=end
 
 bot.command :nsfw do |event|
 	event.respond "The developer of this bot is old enough to but doesn't feel like loading his bot with tiddies"
